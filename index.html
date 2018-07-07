@@ -11,16 +11,17 @@
 
   <script src="facebook.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!--
   Below we include the Login Button social plugin. This button uses
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
   -->
-  <a class="waves-effect waves-light btn-large">
-  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+  
+  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" class="waves-effect waves-light btn-large">
   </fb:login-button>
-  </a>
+
+  <a class="waves-effect waves-light btn-large" id="LogOut">Log Out</a>
 
   <div id="status">
   </div>
