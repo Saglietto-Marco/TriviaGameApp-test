@@ -75,13 +75,19 @@ function testAPI() {
         return res = response;
     });
 
+    FB.logout(function (response) {
+        // user is now logged out
+        console.log(response);
+        console.log("Logout function")
+    });
+
 };
 
-FB.logout(function (res) {
-    // user is now logged out
-    console.log(res);
-    console.log("Logout function")
-});
+// FB.logout(function (res) {
+//     // user is now logged out
+//     console.log(res);
+//     console.log("Logout function")
+// });
 
 console.log("changes1");
 
