@@ -1,4 +1,6 @@
 // This is called with the results from from FB.getLoginStatus().
+var res;
+
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -70,6 +72,7 @@ function testAPI() {
         console.log('Successful login for: ' + response.name);
         document.getElementById('status').innerHTML =
             'Thanks for logging in, ' + response.name + '!';
+        return res = response;
     });
 
 };
@@ -78,9 +81,9 @@ function testAPI() {
 
 
 $("#LogOut").on("click", function () {
-    FB.logout(function (response) {
+    FB.logout(function (res) {
         // user is now logged out
-        console.log(response);
+        console.log(res);
         console.log("Logout function")
     });
     console.log("Logout clicked")
