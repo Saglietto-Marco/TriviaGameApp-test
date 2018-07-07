@@ -81,6 +81,7 @@ function testAPI() {
         console.log("Logout function")
     });
 
+    checkLoginState();
 };
 
 // FB.logout(function (res) {
@@ -89,13 +90,13 @@ function testAPI() {
 //     console.log("Logout function")
 // });
 
-console.log("changes1");
+console.log("changes2");
 
 $("#LogOut").on("click", function () {
-    FB.logout(function (res) {
-        // user is now logged out
-        console.log(res);
-        console.log("Logout function")
-    });
+    // FB.logout(function (res) {
+    //     // user is now logged out
+    //     console.log(res);
+    //     console.log("Logout function")
+    // });
     console.log("Logout clicked")
 });
