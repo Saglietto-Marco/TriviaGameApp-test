@@ -74,11 +74,20 @@ function testAPI() {
 
 };
 
-$(document).ready(function () {
-    $("#LogOut").on("click", function () {
-        FB.logout(function (response) {
-            console.log("Log Out clicked");
-            // Person is now logged out
-        });
-    })
+function facebookLogout(){
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            FB.logout(function(response) {
+                // this part just clears the $_SESSION var
+                // replace with your own code
+                $.post("/logout").done(function() {
+                    $('#status').html('<p>Logged out.</p>');
+                });
+            });
+        }
+    });
+};
+
+$("#LogOut").on("click", function () {
+    facebookLogout();
 });
