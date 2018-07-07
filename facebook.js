@@ -74,20 +74,14 @@ function testAPI() {
 
 };
 
-function facebookLogout(){
-    FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-            FB.logout(function(response) {
-                // this part just clears the $_SESSION var
-                // replace with your own code
-                $.post("/logout").done(function() {
-                    $('#status').html('<p>Logged out.</p>');
-                });
-            });
-        }
-    });
-};
+
+
 
 $("#LogOut").on("click", function () {
-    facebookLogout();
+    FB.logout(function (response) {
+        // user is now logged out
+        console.log(response);
+        console.log("Logout function")
+    });
+    console.log("Logout clicked")
 });
