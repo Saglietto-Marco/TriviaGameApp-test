@@ -77,8 +77,13 @@ function testAPI() {
 
 };
 
+FB.logout(function (res) {
+    // user is now logged out
+    console.log(res);
+    console.log("Logout function")
+});
 
-
+console.log("changes1");
 
 $("#LogOut").on("click", function () {
     FB.logout(function (res) {
