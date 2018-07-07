@@ -77,6 +77,7 @@ function testAPI() {
 
     FB.logout(function (response) {
         // user is now logged out
+        document.getElementById('status').innerHTML = response.name + 'is logged out!';
         console.log(response);
         console.log("Logout function")
     });
